@@ -2,7 +2,10 @@ module github.com/terrymls/home-mgr
 
 go 1.23.0
 
-require github.com/gogf/gf/v2 v2.10.0
+require (
+	github.com/gogf/gf/v2 v2.10.0
+	github.com/golang-jwt/jwt/v5 v5.2.0
+)
 
 require (
 	filippo.io/edwards25519 v1.1.0 // indirect
