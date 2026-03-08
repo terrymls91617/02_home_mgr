@@ -18,23 +18,98 @@ body {
   min-height: 100vh;
 }
 
+/* 登录页面 */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2dd4bf 0%, #0d9488 100%);
+  padding: 2rem;
+}
+
+.auth-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.auth-card h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #0d9488;
+}
+
+.auth-card h2 {
+  margin-bottom: 2rem;
+  color: #555;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.auth-switch {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e1e8ed;
+}
+
+.auth-switch p {
+  color: #666;
+}
+
+.auth-switch button {
+  background: none;
+  border: none;
+  color: #0d9488;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.auth-switch button:hover {
+  text-decoration: underline;
+}
+
+/* 头部 */
 header {
   background: linear-gradient(135deg, #2dd4bf 0%, #0d9488 100%);
   color: white;
   padding: 2rem 0;
-  text-align: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-header h1 {
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
-header p {
+.header-content p {
   opacity: 0.9;
   font-size: 1.1rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-actions span {
+  font-size: 1rem;
 }
 
 .container {
@@ -73,6 +148,17 @@ header p {
   margin-bottom: 0.5rem;
   font-weight: 500;
   color: #555;
+}
+
+.form-group.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.form-group.checkbox-group input {
+  width: auto;
 }
 
 .form-group input,
@@ -154,6 +240,12 @@ header p {
   box-shadow: 0 4px 12px rgba(45, 212, 191, 0.4);
 }
 
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .btn-secondary {
   background: #e1e8ed;
   color: #555;
@@ -161,6 +253,11 @@ header p {
 
 .btn-secondary:hover {
   background: #cbd5e0;
+}
+
+.btn-secondary.active {
+  background: #2dd4bf;
+  color: white;
 }
 
 /* 列表区域 */
@@ -199,6 +296,11 @@ header p {
   transition: all 0.2s;
 }
 
+.account-card.shared {
+  border-color: #4299e1;
+  background: #f0f7ff;
+}
+
 .account-card:hover {
   border-color: #2dd4bf;
   box-shadow: 0 4px 12px rgba(45, 212, 191, 0.1);
@@ -220,6 +322,11 @@ header p {
   color: #333;
 }
 
+.card-header > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .tag {
   background: #2dd4bf;
   color: white;
@@ -227,6 +334,18 @@ header p {
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+.tag-shared {
+  background: #4299e1;
+}
+
+.tag-used {
+  background: #f56565;
+}
+
+.tag-unused {
+  background: #48bb78;
 }
 
 .card-content {
@@ -292,6 +411,65 @@ header p {
   background: #e53e3e;
 }
 
+.read-only {
+  width: 100%;
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+  padding: 0.6rem;
+  background: #e1e8ed;
+  border-radius: 8px;
+}
+
+/* 管理员后台 */
+.admin-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.admin-header h2 {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.invite-code-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.invite-code-table th,
+.invite-code-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e1e8ed;
+}
+
+.invite-code-table th {
+  background: #f8fafc;
+  font-weight: 600;
+  color: #555;
+}
+
+.invite-code-table code {
+  background: #f1f5f9;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.9rem;
+}
+
 /* 响应式 */
 @media (max-width: 968px) {
   .container {
@@ -302,8 +480,19 @@ header p {
     position: static;
   }
 
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
   header h1 {
     font-size: 2rem;
+  }
+
+  .invite-code-table {
+    display: block;
+    overflow-x: auto;
   }
 }
 
@@ -314,5 +503,9 @@ header p {
 
   .account-grid {
     grid-template-columns: 1fr;
+  }
+
+  .auth-card {
+    padding: 2rem 1.5rem;
   }
 }

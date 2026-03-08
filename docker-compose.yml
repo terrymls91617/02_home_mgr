@@ -23,6 +23,8 @@ services:
       - GF_DATABASE_NAME=home_mgr
       - GF_DATABASE_USER=root
       - GF_DATABASE_PASS=home_mgr_2024
+      - ADMIN_PASSWORD=admin123456
+      - JWT_SECRET=home_mgr_default_secret_2024
     depends_on:
       db:
         condition: service_healthy
